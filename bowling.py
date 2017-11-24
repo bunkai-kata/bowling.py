@@ -10,6 +10,9 @@ class Game:
 
     def score(self):
         score = 0
-        for i in range(len(self._rolls)):
+        rolls = self._rolls
+        for i in range(len(self._rolls) - 1):
+            if rolls[i] + rolls[i+1] == 10:
+                score += rolls[i+2]
             score += self._rolls[i]
         return score
