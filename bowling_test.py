@@ -26,3 +26,10 @@ def test_one_spare(g):
     g.roll(3)
     roll_many(g, 17, 0)
     assert 16 == g.score()
+
+def test_one_strike(g):
+    g.roll(10) # strike
+    g.roll(3)
+    g.roll(4)
+    roll_many(g, 16, 0)
+    assert 24 == g.score()
