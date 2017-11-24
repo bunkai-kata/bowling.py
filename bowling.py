@@ -21,7 +21,7 @@ class Game:
                 score += 10 + self._rolls[frame_index+2]
                 frame_index += 2
             else:
-                score += self._rolls[frame_index] + self._rolls[frame_index+1]
+                score += self._sum_of_balls_in_frame(frame_index)
                 frame_index += 2
         return score
 
@@ -29,4 +29,7 @@ class Game:
         return self._rolls[frame_index] == 10
 
     def _is_spare(self, frame_index):
-        return self._rolls[frame_index] + self._rolls[frame_index+1] == 10
+        return self._sum_of_balls_in_frame(frame_index) == 10
+
+    def _sum_of_balls_in_frame(self, frame_index):
+        return self._rolls[frame_index] + self._rolls[frame_index+1]
