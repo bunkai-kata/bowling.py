@@ -36,3 +36,7 @@ def test_one_strike(g):
     g.roll(4)
     roll_many(g, 16, 0)
     assert 24 == g.score()
+
+def test_perfect_game(g):
+    roll_many(g, 12, 10)
+    assert 300 == g.score()
