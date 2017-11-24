@@ -12,4 +12,4 @@ class Game:
         score = 0
         for i in range(len(self._rolls)):
             score += self._rolls[i]
-        return self._score
+        return score
