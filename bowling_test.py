@@ -5,3 +5,5 @@ def test_gutter_game():
 
     for i in range(20):
         g.roll(0)
+
+    assert 0 == g.score()
