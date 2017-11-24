@@ -5,11 +5,14 @@ from bowling import *
 def g():
     return Game()
 
+def roll_many(g, n, pins):
+    for i in range(n):
+        g.roll(pins)
+
 def test_gutter_game(g):
     n = 20
     pins = 0
-    for i in range(n):
-        g.roll(pins)
+    roll_many(g, n, pins)
 
     assert 0 == g.score()
 
