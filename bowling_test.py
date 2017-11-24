@@ -6,8 +6,10 @@ def g():
     return Game()
 
 def test_gutter_game(g):
-    for i in range(20):
-        g.roll(0)
+    n = 20
+    pins = 0
+    for i in range(n):
+        g.roll(pins)
 
     assert 0 == g.score()
 
