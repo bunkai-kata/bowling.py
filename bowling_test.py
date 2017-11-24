@@ -10,10 +10,7 @@ def roll_many(g, n, pins):
         g.roll(pins)
 
 def test_gutter_game(g):
-    n = 20
-    pins = 0
-    roll_many(g, n, pins)
-
+    roll_many(g, 20, 0)
     assert 0 == g.score()
 
 def test_all_ones(g):
