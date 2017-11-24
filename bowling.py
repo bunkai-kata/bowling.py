@@ -11,7 +11,11 @@ class Game:
     def score(self):
         score = 0
         i = 0
-        for i in range(10):
-            score += self._rolls[i] + self._rolls[i+1]
-            i += 2
+        for frame in range(10):
+            if (self._rolls[i] + self._rolls[i+1] == 10):  # spare
+                score += 10 + self._rolls[i+2]
+                i += 2
+            else:
+                score += self._rolls[i] + self._rolls[i+1]
+                i += 2
         return score
